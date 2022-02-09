@@ -1,0 +1,27 @@
+name: Base
+on:
+  schedule: [{cron: "0 */24 * * *"}]
+  workflow_dispatch:
+  # push: {branches: ["main"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.base.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ahampriyanshu
+          template: classic
+          base: header, repositories, metadata
+          config_timezone: Asia/Kolkata
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user
+          plugin_lines: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_rss: yes
+          plugin_rss_source: https://ahampriyanshu.com/feed
+          plugin_rss_limit: 4

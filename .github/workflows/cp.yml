@@ -1,0 +1,17 @@
+name: Cp
+on:
+  schedule: [{cron: "0 */24 * * *"}]
+  workflow_dispatch:
+  # push: {branches: ["meta"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.cp.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_rss: yes
+          plugin_rss_source: https://ahampriyanshu.com/cp/feed
+          plugin_rss_limit: 8
