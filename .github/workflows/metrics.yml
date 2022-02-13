@@ -1,4 +1,4 @@
-name: Base
+name: Metrics
 on:
   schedule: [{cron: "0 */24 * * *"}]
   workflow_dispatch:
@@ -9,12 +9,11 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.base.svg
+          filename: base.svg
           token: ${{ secrets.METRICS_TOKEN }}
           user: ahampriyanshu
           template: classic
           base: header, repositories, metadata
-          config_timezone: Asia/Kolkata
           plugin_followup: yes
           plugin_followup_sections: repositories, user
           plugin_lines: yes
@@ -23,5 +22,5 @@ jobs:
           plugin_habits_facts: yes
           plugin_habits_charts: yes
           plugin_rss: yes
-          plugin_rss_source: https://ahampriyanshu.com/feed
+          plugin_rss_source: https://ahampriyanshu.com/cp/feed
           plugin_rss_limit: 4
