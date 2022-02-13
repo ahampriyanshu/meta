@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: base.svg
+          filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
           user: ahampriyanshu
           template: classic
@@ -23,4 +23,4 @@ jobs:
           plugin_habits_charts: yes
           plugin_rss: yes
           plugin_rss_source: https://ahampriyanshu.com/cp/feed
-          plugin_rss_limit: 4
+          plugin_rss_limit: 8
