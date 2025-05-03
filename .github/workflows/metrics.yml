@@ -39,6 +39,3 @@ jobs:
           plugin_lines_history_limit: 1
           plugin_lines_repositories_limit: 4
           plugin_lines_sections: base
-          plugin_rss: yes
-          plugin_rss_limit: 8
-          plugin_rss_source: https://ahampriyanshu.com/blog/feed
